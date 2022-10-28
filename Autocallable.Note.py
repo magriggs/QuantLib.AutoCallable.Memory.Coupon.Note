@@ -160,10 +160,13 @@ calendar = ql.TARGET()
 # Autocallable Memory Coupon Note
 notional = 1000000.0
 spot = 3550.0
+spot_ladder = [3250,3300,3350,3400,3450,3500,3550]
 if (len(sys.argv)>1):
-    for arg in sys.argv:
-        print(arg)
-    spot = float(sys.argv[1])
+    idx = int(sys.argv[1])
+    if (idx > len(spot_ladder) or idx < 0):
+        print("Error, index ",idx," is out of range")
+        sys.exit(1)
+    spot = spot_ladder[int(sys.argv[1])]
     print("Spot = ",spot)
 
 strike = 3550.0
