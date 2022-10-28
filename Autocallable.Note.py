@@ -161,6 +161,7 @@ calendar = ql.TARGET()
 notional = 1000000.0
 spot = 3550.0
 spot_ladder = [3250,3300,3350,3400,3450,3500,3550]
+print("len(sys.argv =",len(sys.argv))
 if (len(sys.argv)>1):
     idx = int(sys.argv[1])
     if (idx > len(spot_ladder) or idx < 0):
