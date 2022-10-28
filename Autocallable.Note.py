@@ -1,6 +1,7 @@
 import QuantLib as ql
 import numpy as np
 import scipy.optimize as opt
+import sys
 
 # hard-coded calibrator for Heston model
 def HestonModelCalibrator(valuationDate, calendar, spot, curveHandle, dividendHandle, 
@@ -159,6 +160,12 @@ calendar = ql.TARGET()
 # Autocallable Memory Coupon Note
 notional = 1000000.0
 spot = 3550.0
+if (len(sys.argv)>1):
+    for arg in sys.argv:
+        print(arg)
+    spot = float(sys.argv[1])
+    print("Spot = ",spot)
+
 strike = 3550.0
 autoCallBarrier = 1.0
 couponBarrier = 0.8
