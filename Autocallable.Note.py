@@ -216,7 +216,7 @@ bounds = [(0.01, 1.0), (0.01, 10.0), (0.01, 1.0), (-1.0, 1.0), (0.01, 1.0)]
 # calibrate Heston model, print calibrated parameters
 calibrationResult = HestonModelCalibrator(valuationDate, calendar, spot, curveHandle, dividendHandle, 
         v0, kappa, theta, sigma, rho, expiration_dates, strikes, data, opt.differential_evolution, bounds)
-print('calibrated Heston parameters', calibrationResult[1].params())
+#print('calibrated Heston parameters', calibrationResult[1].params())
 
 # monte carlo parameters
 nPaths = 10000
